@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop our collection of high-quality products with fast delivery and excellent customer service.">
+  <title>Zaquir's Shop - Quality Products</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-content">
+        <h1 class="store-name">Boomer's Shop</h1>
+        <div class="header-meta">
+          <p class="last-updated">Last updated: <time id="timestamp">Loading...</time></p>
+          <div class="controls">
+            <select id="sortBy" aria-label="Sort products">
+              <option value="default">Sort by</option>
+              <option value="nameAsc">Name (A-Z)</option>
+              <option value="nameDesc">Name (Z-A)</option>
+              <option value="priceLow">Price (Low to High)</option>
+              <option value="priceHigh">Price (High to Low)</option>
+              <option value="newest">Newest First</option>
+            </select>
+            <select id="filterBy" aria-label="Filter products">
+              <option value="all">All Products</option>
+              <option value="inStock">In Stock</option>
+              <option value="outOfStock">Out of Stock</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+ <main>
+  <section class="products-section">
+    <div class="container">
+      <div id="productCount" class="product-count" aria-live="polite">Loading products...</div>
+
+      <div id="productsGrid" class="products-grid" aria-busy="true">
+        <div class="loading-spinner" id="loadingSpinner">
+          <div class="spinner"></div>
+          <p>Loading products...</p>
+        </div>
+
+        <div id="emptyState" class="empty-state" style="display: none;">
+          <p>No products found. Try adjusting your filters or check back later!</p>
+        </div>
+
+        <!-- Dynamic product cards will be injected here -->
+      </div>
+
+      <!-- NoScript fallback -->
+      <noscript>
+        <p class="noscript-warning">JavaScript is disabled in your browser. Please enable it to view our products.</p>
+      </noscript>
+    </div>
+  </section>
+</main>
+
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h2>Business Hours</h2>
+          <ul class="hours-list">
+            <li><span>Monday - Friday:</span> 9:00 AM - 6:00 PM</li>
+            <li><span>Saturday:</span> 10:00 AM - 4:00 PM</li>
+            <li><span>Sunday:</span> Closed</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h2>Contact Us</h2>
+          <ul class="contact-list">
+            <li><strong>Phone:</strong> +254 712 345 678</li>
+            <li><strong>Email:</strong> <a href="mailto:info@boomershop.com">info@boomershop.com</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h2>Visit Our Store</h2>
+          <address>
+            123 Moi Avenue<br>
+            Nairobi, Kenya<br>
+            P.O. Box 12345
+          </address>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Maina Zaquir. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <template id="productCardTemplate">
+  <article class="product-card" tabindex="0" aria-label="Product card">
+    <div class="product-image-container">
+      <img class="product-image" src="" alt="Product image" loading="lazy">
+      <div class="sale-badge" style="display:none;">Sale!</div>
+    </div>
+    <div class="product-details">
+      <h2 class="product-name"></h2>
+      <p class="product-price"></p>
+      <p class="product-stock"></p>
+      <div class="product-rating" style="display:none;">⭐️⭐️⭐️⭐️⭐️</div>
+    </div>
+  </article>
+</template>
+
+ <script defer src="js/data.js"></script>
+<script defer src="js/utils.js"></script>
+<script defer src="js/app.js"></script>
+
+</body>
+</html>
